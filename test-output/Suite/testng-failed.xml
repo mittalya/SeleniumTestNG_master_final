@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="BaseTest.Listener"/>
+    <listener class-name="BaseTest.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="2" name="LoginTest1(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="url" value="http://ussltc7495v.dev.sltc.com/ibmcognos/bi/"/>
+    <classes>
+      <class name="TestCases.Test1">
+        <methods>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+          <include name="endTest"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="startTest"/>
+          <include name="TestLoginPass"/>
+        </methods>
+      </class> <!-- TestCases.Test1 -->
+    </classes>
+  </test> <!-- LoginTest1(failed) -->
+  <test thread-count="2" name="LoginTest2(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="http://ussltc7495v.dev.sltc.com/ibmcognos/bi/"/>
+    <classes>
+      <class name="TestCases.Test2">
+        <methods>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+          <include name="endTest"/>
+          <include name="afterSuite"/>
+          <include name="TestLoginPass" invocation-numbers="0 0"/>
+          <include name="beforeTest"/>
+          <include name="beforesuite"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- TestCases.Test2 -->
+    </classes>
+  </test> <!-- LoginTest2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

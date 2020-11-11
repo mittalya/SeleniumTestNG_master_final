@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--  <suite thread-count="1" verbose="10" name="Test Suite"> -->
+ <suite name="Suite" parallel="tests" thread-count="2">
+     <listeners>
+        <listener class-name="BaseTest.Listener" />
+        <listener class-name="BaseTest.AnnotationTransformer"/>
+    </listeners>
+<!-- <test name ="ChromeTest">
+  <parameter name ="browser" value = "Chrome" />
+    <classes>
+      <class name="BaseTest.BaseTest"/>
+    </classes>
+    </test>
+    <test name ="FirefoxTest">
+  <parameter name ="browser" value = "Firefox" />
+   <groups>
+         <define name = "all">
+            <exclude name = "A"/>
+            <include name = "Sanity Test"/>
+         </define>
+
+         <run>
+            <include name = "all"/>
+         </run>
+      </groups>
+    <classes>
+      <class name="TestCases.Login"/>
+      <class name="TestCases.LoginwithDataprovider"/>
+    </classes>
+    </test> -->
+    
+    <test name ="LoginTest1">
+  <parameter name ="browser" value = "Firefox" />
+  <parameter name ="url" value = "http://ussltc7495v.dev.sltc.com/ibmcognos/bi/" />
+    <classes>
+      <class name="TestCases.Test1"/>
+    </classes>
+  </test> <!-- Test -->
+	    <test name ="LoginTest2">
+  <parameter name ="browser" value = "Chrome" />
+  <parameter name ="url" value = "http://ussltc7495v.dev.sltc.com/ibmcognos/bi/" />
+    <classes>
+      <class name="TestCases.Test2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
